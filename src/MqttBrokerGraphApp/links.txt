@@ -1,0 +1,9 @@
+﻿
+docs:
+https://learn.microsoft.com/en-us/azure/event-grid/mqtt-client-groups#how-to-create-client-group-queries
+
+Nuget:
+
+
+github issue:
+https://github.com/MicrosoftDocs/azure-docs/issues/122600
