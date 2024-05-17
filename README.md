@@ -53,4 +53,6 @@ The unit tests proof the support for a limited number of scenarios:
 // attributes.type <> "audit"
 ```
 
-Feel free to contribute for a better query support.
+So, it cannot work with integers or '> >= < <= and or parenthesis'.
+
+Feel free to contribute for better query support.
