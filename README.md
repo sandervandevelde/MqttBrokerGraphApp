@@ -14,7 +14,7 @@ string namespaceName = "iotgrid-basic-egns";
 
 Next to this access to the Azure Portal / Arm resources is needed.
 
-There are two possibilies shown:
+There are two possibilities shown:
 
 ```
 // Use host application access
@@ -43,14 +43,14 @@ The result looks like this:
 
 A custom parser for the device client query had to be written.
 
-The unittests proof the support for a limited number of scenarios:
+The unit tests proof the support for a limited number of scenarios:
 
 ```
-		// attributes.type IN ['audit']
-		// attributes.type IN ['audit', 'a', 'AA',99]
-		// attributes.type = "audit"
-		// attributes.type != "audit"
-		// attributes.type <> "audit"
+// attributes.type IN ['audit']
+// attributes.type IN ['audit', 'a', 'AA',99]
+// attributes.type = "audit"
+// attributes.type != "audit"
+// attributes.type <> "audit"
 ```
 
 Feel free to contribute for a better query support.
