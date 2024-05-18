@@ -12,7 +12,19 @@ string resourceGroupName = "iotgrid-demo-rg";
 string namespaceName = "iotgrid-basic-egns";
 ```
 
-Notice three environment variables are used to read the values from our system.
+Notice three environment variables are used to read the values from our system:
+
+```
+mqtt-graph-subscriptionid
+mqtt-graph-resourcegroupname
+mqtt-graph-namespacename
+```
+
+An alternative for the namespace name is available when the [MQTT client extensions](https://github.com/Azure-Samples/MqttApplicationSamples/tree/main/mqttclients) are used:
+
+```
+Environment.GetEnvironmentVariable("MQTT_HOST_NAME").Split('.').First()
+```
 
 Next to this access to the Azure Portal / Arm resources is needed.
 
