@@ -28,7 +28,7 @@ Environment.GetEnvironmentVariable("MQTT_HOST_NAME").Split('.').First()
 
 Next to this access to the Azure Portal / Arm resources is needed.
 
-There are two possibilities shown:
+There are two possibilities for retrieving credential demonstrated:
 
 ```
 // Use host application access
@@ -49,7 +49,7 @@ login on the Dos prompt via:
 az login
 ```
 
-The result looks like this:
+The result looks like this (this can take a couple of seconds or more to be constructed):
 
 ![image](https://github.com/sandervandevelde/MqttBrokerGraphApp/assets/694737/3c41ab8e-9ab3-486e-849c-91d58e385117)
 
