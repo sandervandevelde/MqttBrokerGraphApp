@@ -12,6 +12,8 @@ string resourceGroupName = "iotgrid-demo-rg";
 string namespaceName = "iotgrid-basic-egns";
 ```
 
+Notice three environment variables are used to read the values from our system.
+
 Next to this access to the Azure Portal / Arm resources is needed.
 
 There are two possibilities shown:
