@@ -48,6 +48,8 @@ The unit tests proof the support for a limited number of scenarios:
 ```
 // attributes.type IN ['audit']
 // attributes.type IN ['audit', 'a', 'AA',99]
+// attributes.type in ['audit']
+// attributes.type in ['audit', 'a', 'AA',99]
 // attributes.type = "audit"
 // attributes.type != "audit"
 // attributes.type <> "audit"
