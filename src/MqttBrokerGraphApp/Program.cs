@@ -14,9 +14,12 @@ namespace MqttBrokerGraphApp
 			Console.WriteLine("EventGrid MQTT broker - Client MQTT topics");
 			Console.WriteLine("==========================================");
 
-			string subscriptionId = "[subscription id of the eventgrid namespace]";
-			string resourceGroupName = "[name of the resource group]";
-			string namespaceName = "[name of the eventgrid namespace]";
+			// subscription id of the eventgrid namespace
+			string? subscriptionId = Environment.GetEnvironmentVariable("mqtt-graph-subscriptionid");
+			// name of the resource group
+			string? resourceGroupName = Environment.GetEnvironmentVariable("mqtt-graph-resourcegroupname"); ;
+			// name of the eventgrid namespace
+			string? namespaceName = Environment.GetEnvironmentVariable("mqtt-graph-namespacename");
 
 			await GetClientTopics(subscriptionId, resourceGroupName, namespaceName);
 
