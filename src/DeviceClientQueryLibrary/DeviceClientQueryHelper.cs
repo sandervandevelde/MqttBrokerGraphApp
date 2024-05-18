@@ -15,10 +15,11 @@ namespace DeviceClientQueryLibrary
 			var key = attribute.Key;
 			var value = attribute.Value.ToString().Replace("\"", "");
 
-			if (query.Contains(" IN "))
+			if (query.Contains(" IN ")
+					|| query.Contains(" in "))
 			{
 				// IN pattern
-				string pattern = @"attributes\.(\w+) IN \[([a-zA-Z',\s\d]+)\]";
+				string pattern = @"attributes\.(\w+) [IN|in]+ \[([a-zA-Z',\s\d]+)\]";
 
 				foreach (Match m in Regex.Matches(query, pattern))
 				{
@@ -57,33 +58,11 @@ namespace DeviceClientQueryLibrary
 				}
 			}
 
-			if (query.Contains(" <> "))
+			if (query.Contains(" <> ")
+					|| query.Contains(" != "))
 			{
 				// IN pattern
-				string pattern = @"attributes\.(\w+) <> ""([a-zA-Z',\s\d]+)""";
-
-				var MatchFound = false;
-
-				foreach (Match m in Regex.Matches(query, pattern))
-				{
-					var groupKey = m.Groups[1].Value;
-					var groupValue = m.Groups[2].Value;
-
-					if (key == groupKey && value == groupValue)
-					{
-						MatchFound = true;
-
-						break;
-					}
-				}
-
-				return !MatchFound;
-			}
-
-			if (query.Contains(" != "))
-			{
-				// IN pattern
-				string pattern = @"attributes\.(\w+) != ""([a-zA-Z',\s\d]+)""";
+				string pattern = @"attributes\.(\w+) [<>|!=]+ ""([a-zA-Z',\s\d]+)""";
 
 				var MatchFound = false;
 
