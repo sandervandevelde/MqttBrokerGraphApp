@@ -108,7 +108,7 @@ namespace DeviceClientQueryLibrary
 
 					var topic = new Topic();
 					topic.Name = topicName;
-					topic.Usage = "Publisher";
+					topic.Usage = "Publish";
 					client.Topics.Add(topic);
 				}
 
