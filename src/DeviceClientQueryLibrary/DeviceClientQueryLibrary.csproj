@@ -5,6 +5,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>MqttBrokerDeviceClientLibrary</Title>
+    <Copyright>Copyright 2024 Sander van de Velde</Copyright>
+    <PackageProjectUrl>https://github.com/sandervandevelde/MqttBrokerGraphApp</PackageProjectUrl>
+    <Description>Demonstrator for reading the Azure EventGrid namespace device client graph</Description>
+    <RepositoryUrl>https://github.com/sandervandevelde/MqttBrokerGraphApp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>mqtt; azure; eventgrid; deviceclient; topicspace; permiisionbinding</PackageTags>
   </PropertyGroup>
 
 	<ItemGroup>
