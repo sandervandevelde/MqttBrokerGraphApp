@@ -37,6 +37,8 @@ namespace MqttBrokerGraphApp
 				{
 					Console.WriteLine($"Can {topic.Usage} on: {topic.Name}");
 				}
+
+				Console.WriteLine();
 			}
 		}
 	}
