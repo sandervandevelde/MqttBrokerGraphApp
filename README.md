@@ -1,6 +1,10 @@
 # MqttBrokerGraphApp
 
-Demonstrator for reading the Azure EventGrid namespace device client graph
+Demonstrator for reading the Azure EventGrid namespace device client graph.
+
+## Want to see how it works?
+
+This [blog post](https://sandervandevelde.wordpress.com/2024/05/21/eventgrid-namespace-mqtt-support-topics-per-client-overview/) offers you a detailed walk-through on how to use this repo. 
 
 ## Configuration
 
