@@ -31,7 +31,9 @@ namespace MqttBrokerGraphApp
 
 			foreach (Client client in clients) 
 			{
-				Console.WriteLine($"Client {client.Name}");
+				var enabledText = client.Enabled ? "Enabled" : "Disabled";
+
+				Console.WriteLine($"Client {client.Name} ({enabledText})");
 
 				foreach (var topic in client.Topics)
 				{
