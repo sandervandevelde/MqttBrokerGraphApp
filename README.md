@@ -1,4 +1,4 @@
-# MqttBrokerGraphApp
+# EventGrid namespace MQTT support, topics per client overview
 
 Demonstrator for reading the Azure EventGrid namespace device client graph.
 
@@ -32,7 +32,7 @@ Environment.GetEnvironmentVariable("MQTT_HOST_NAME").Split('.').First()
 
 Next to this access to the Azure Portal / Arm resources is needed.
 
-There are two possibilities for retrieving credential demonstrated:
+There are two possibilities demonstrated for retrieving credentials:
 
 ```
 // Use host application access
@@ -55,7 +55,7 @@ az login
 
 The result looks like this (this can take a couple of seconds or more to be constructed):
 
-![image](https://github.com/sandervandevelde/MqttBrokerGraphApp/assets/694737/3c41ab8e-9ab3-486e-849c-91d58e385117)
+![image](https://github.com/sandervandevelde/MqttBrokerGraphApp/assets/694737/dbc411b5-3018-4f4d-8f75-4d801b84f361)
 
 ## Unit tests
 
