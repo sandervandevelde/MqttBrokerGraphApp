@@ -22,10 +22,10 @@ namespace MqttBrokerGraphApp
 			string? namespaceName = Environment.GetEnvironmentVariable("mqtt-graph-namespacename");
 
 			// Use host application access
-			//ArmClient client = new ArmClient(new DefaultAzureCredential());
+			//var cred = new DefaultAzureCredential();
 
 			// Use CLI access via AZ LOGIN 
-			DefaultAzureCredential cred = new DefaultAzureCredential(new DefaultAzureCredentialOptions { ExcludeSharedTokenCacheCredential = true });
+			var cred = new DefaultAzureCredential(new DefaultAzureCredentialOptions { ExcludeSharedTokenCacheCredential = true });
 
 			List<Client> clients = DeviceClientQueryProvider.GetClientTopics(subscriptionId, resourceGroupName, namespaceName, cred);
 
