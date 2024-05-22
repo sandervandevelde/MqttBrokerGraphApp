@@ -52,7 +52,7 @@ Run the application.
 
 The result looks like this (this can take a couple of seconds or more to be constructed):
 
-![image](https://github.com/sandervandevelde/MqttBrokerGraphApp/assets/694737/dbc411b5-3018-4f4d-8f75-4d801b84f361)
+![image](images/client-topics-01.png)
 
 ## Unit tests for the device client queries
 
