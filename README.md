@@ -1,8 +1,8 @@
 # EventGrid namespace MQTT support, topics per client overview
 
-Demonstrator for reading the Azure EventGrid namespace device client graph.
+Demonstrator with an overview of Azure EventGrid namespace device clients and their topics.
 
-## Want to see how it works?
+## Walk-through
 
 This [blog post](https://sandervandevelde.wordpress.com/2024/05/21/eventgrid-namespace-mqtt-support-topics-per-client-overview/) offers you a detailed walk-through on how to use this repo. 
 
