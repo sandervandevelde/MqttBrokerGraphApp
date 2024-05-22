@@ -64,9 +64,9 @@ These example query formats are supported:
 
 ```
 // attributes.type IN ['audit']
-// attributes.type IN ['audit', 'a', 'AA',99]
+// attributes.type IN ['audit', 'a', 'AA', 99]
 // attributes.type in ['audit']
-// attributes.type in ['audit', 'a', 'AA',99]
+// attributes.type in ['audit', 'a', 'AA', 99]
 // attributes.type = "audit"
 // attributes.type != "audit"
 // attributes.type <> "audit"
