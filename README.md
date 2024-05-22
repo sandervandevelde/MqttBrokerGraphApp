@@ -6,9 +6,13 @@ Demonstrator with an overview of Azure EventGrid namespace device clients and th
 
 This [blog post](https://sandervandevelde.wordpress.com/2024/05/21/eventgrid-namespace-mqtt-support-topics-per-client-overview/) offers you a detailed walk-through on how to use this repo. 
 
-## Configuration
+## Prerequisites
 
-Change the settings so the application has access to the right resources:  
+The application needs both access to the EventGrid namespace resource and authorization.
+
+### EventGrid namespace resource settings
+
+An example of the EventGrid namespace settings looks like:  
 
 ```
 string subscriptionId = "de442b11-d1e5-4655-aa8f-84011ad41d44";
@@ -16,7 +20,7 @@ string resourceGroupName = "iotgrid-demo-rg";
 string namespaceName = "iotgrid-basic-egns";
 ```
 
-Notice three environment variables are used to read the values from our system:
+Notice that three environment variables are used by the application to read the values from your system:
 
 ```
 mqtt-graph-subscriptionid
@@ -24,44 +28,39 @@ mqtt-graph-resourcegroupname
 mqtt-graph-namespacename
 ```
 
-An alternative for the namespace name is available when the [MQTT client extensions](https://github.com/Azure-Samples/MqttApplicationSamples/tree/main/mqttclients) are used:
+### Authorization
+
+Next to the settings authorization to the Azure Portal / Arm resources is needed.
+
+The authorization using the Azure CLI is demonstrated for retrieving credentials:
 
 ```
-Environment.GetEnvironmentVariable("MQTT_HOST_NAME").Split('.').First()
-```
-
-Next to this access to the Azure Portal / Arm resources is needed.
-
-There are two possibilities demonstrated for retrieving credentials:
-
-```
-// Use host application access
-ArmClient client = new ArmClient(new DefaultAzureCredential());
-
 // Use CLI access via AZ LOGIN 
 var cred = new DefaultAzureCredential(new DefaultAzureCredentialOptions { ExcludeSharedTokenCacheCredential = true });
 ArmClient client = new ArmClient(cred);
 ```
 
-The first line makes use of the Azure portal/arm access via the credentials used by the hosting application (eg. Visual Studio or an Azure Function).
+These lines make use of the Azure portal/arm access via credentials stored in the Azure CLI.
 
-The last two lines make use of the Azure portal/arm access via credentials stored in the Azure CLI.
-
-login on the Dos prompt via:
+So, log in on the Dos prompt via:
 
 ```
 az login
 ```
 
+Run the application.
+
 The result looks like this (this can take a couple of seconds or more to be constructed):
 
 ![image](https://github.com/sandervandevelde/MqttBrokerGraphApp/assets/694737/dbc411b5-3018-4f4d-8f75-4d801b84f361)
 
-## Unit tests
+## Unit tests for the device client queries
 
-A custom parser for the device client query had to be written.
+A custom parser for the device client query is written, due to an omission in the underlying NuGet Arm library.
 
-The unit tests proof the support for a limited number of scenarios:
+The unit tests prove the correct support for a limited number of scenarios.
+
+These example query formats are supported:
 
 ```
 // attributes.type IN ['audit']
@@ -73,6 +72,8 @@ The unit tests proof the support for a limited number of scenarios:
 // attributes.type <> "audit"
 ```
 
-So, it cannot work with integers or '> >= < <= and or parenthesis'.
+## Contributions
 
-Feel free to contribute for better query support.
+At this moment, the custom query parser does not support integers, '> >= < <=', 'and', 'or', parenthesis.
+
+Contributions for better query support are welcome.
