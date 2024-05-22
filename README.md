@@ -2,6 +2,12 @@
 
 Demonstrator with an overview of Azure EventGrid namespace device clients and their topics.
 
+It combines all clients, client groups, topic spaces, and permission bindings found in your MQTT broker and outputs a list of clients, each with its own topics:
+
+![image](images/client-topics-01.png)
+
+The code behind this demonstration is available under an MIT license so you can use it in your own projects too.
+
 ## Walk-through
 
 This [blog post](https://sandervandevelde.wordpress.com/2024/05/21/eventgrid-namespace-mqtt-support-topics-per-client-overview/) offers you a detailed walk-through on how to use this repo. 
@@ -48,11 +54,7 @@ So, log in on the Dos prompt via:
 az login
 ```
 
-Run the application.
-
-The result looks like this (this can take a couple of seconds or more to be constructed):
-
-![image](images/client-topics-01.png)
+Run the application (it can take a couple of seconds or more to be constructed).
 
 ## Unit tests for the device client queries
 
